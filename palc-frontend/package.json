@@ -2,6 +2,7 @@
   "name": "palc-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://tsinik2508.github.io/Palc/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
@@ -26,8 +27,7 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build"
   },
-
-  "homepage": "https://TsiNik2508.github.io/Palc/", 
+  
 
   "eslintConfig": {
     "extends": [

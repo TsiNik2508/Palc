@@ -10,13 +10,13 @@ import ToursSection from '../src/components/ToursSection/ToursSection.js';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <div className="App">
         <Header />
         <main>
           <Routes>
-            <Route 
-              path="/" 
+            <Route
+              path="/"
               element={
                 <div>
                   <LogoSection />
@@ -24,7 +24,7 @@ function App() {
                   <MerchSection />
                   <ToursSection />
                 </div>
-              } 
+              }
             />
             <Route path="/music" element={<MusicPage />} />
             <Route path="/tours" element={<ToursPage />} />

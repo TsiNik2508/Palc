@@ -28,7 +28,7 @@ function App() {
 }
 
 const HomePage = () => (
-  <div>
+  <div className='page'>
     <LogoSection />
     <AlbumCardsSection />
     <MerchSection />

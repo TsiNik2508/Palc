@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../src/components/Header/Header.js';
 import './styles/App.css';
 import LogoSection from '../src/components/LogoSection/LogoSection.js';
+import AlbumCardsSection from '../src/components/AlbumCardsSection/AlbumCardsSection.js';
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
 const HomePage = () => (
   <div>
     <LogoSection />
-    <div></div>
+    <AlbumCardsSection />
   </div>
 );
 

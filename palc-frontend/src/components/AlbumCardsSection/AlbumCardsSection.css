@@ -1,0 +1,44 @@
+.album-cards-section {
+  padding: 40px 20px;
+  background-color: #000000;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.card {
+  display: block;
+  flex-basis: calc(50% - 30px);
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s;
+}
+
+.card img {
+  width: 70%; /* Изменение ширины изображения на 100% */
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(17, 255, 0);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Медиа-запрос для адаптивной верстки */
+@media screen and (max-width: 768px) {
+  .card {
+    flex-basis: calc(70% - 40px); 
+  }
+}

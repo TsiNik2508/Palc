@@ -3,11 +3,11 @@ import './ToursSection.css';
 
 const ToursSection = () => {
   const tours = [
-    { id: 1, date: '2222-22-23', city: 'London', link: '/buy-tickets' },
-    { id: 2, date: '2222-22-24', city: 'Paris', link: '/buy-tickets' },
-    { id: 3, date: '2222-22-25', city: 'Berlin', link: '/buy-tickets' },
-    { id: 4, date: '2222-22-26', city: 'New York', link: '/buy-tickets' },
-    { id: 5, date: '2222-22-27', city: 'Tokyo', link: '/buy-tickets' },
+    { id: 1, date: '2024-06-15', city: 'London', link: '/buy-tickets' },
+    { id: 2, date: '2024-07-20', city: 'Paris', link: '/buy-tickets' },
+    { id: 3, date: '2024-08-05', city: 'Berlin', link: '/buy-tickets' },
+    { id: 4, date: '2024-09-10', city: 'New York', link: '/buy-tickets' },
+    { id: 5, date: '2024-10-25', city: 'Tokyo', link: '/buy-tickets' },
   ];
 
   return (
@@ -20,7 +20,7 @@ const ToursSection = () => {
               <span className="tour-date">{tour.date}</span>
               <span className="tour-city">{tour.city}</span>
             </div>
-            <a href={tour.link} className="tour-link">Купить билет (если получится)</a>
+            <a href={tour.link} className="tour-link">Buy Tickets</a>
           </div>
         ))}
       </div>

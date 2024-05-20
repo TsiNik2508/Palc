@@ -15,7 +15,17 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route 
+              path="/" 
+              element={
+                <div>
+                  <LogoSection />
+                  <AlbumCardsSection />
+                  <MerchSection />
+                  <ToursSection />
+                </div>
+              } 
+            />
             <Route path="/music" element={<MusicPage />} />
             <Route path="/tours" element={<ToursPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
@@ -26,15 +36,6 @@ function App() {
     </Router>
   );
 }
-
-const HomePage = () => (
-  <div className='page'>
-    <LogoSection />
-    <AlbumCardsSection />
-    <MerchSection />
-    <ToursSection />
-  </div>
-);
 
 const MusicPage = () => <div>Музыка</div>;
 const ToursPage = () => <div>Туры</div>;

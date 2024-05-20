@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../src/components/Header/Header.js';
 import './styles/App.css';
+import LogoSection from '../src/components/LogoSection/LogoSection.js';
 
 function App() {
   return (
@@ -21,7 +22,13 @@ function App() {
   );
 }
 
-const HomePage = () => <div>Главная страница</div>;
+const HomePage = () => (
+  <div>
+    <LogoSection />
+    <div></div>
+  </div>
+);
+
 const MusicPage = () => <div>Музыка</div>;
 const ToursPage = () => <div>Туры</div>;
 const GalleryPage = () => <div>Галерея</div>;

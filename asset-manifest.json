@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/Palc/static/css/main.1b28a63d.css",
-    "main.js": "/Palc/static/js/main.5e5eeee4.js",
+    "main.css": "/Palc/static/css/main.639c4a07.css",
+    "main.js": "/Palc/static/js/main.1c0ebbeb.js",
     "static/js/453.0145a977.chunk.js": "/Palc/static/js/453.0145a977.chunk.js",
+    "static/media/background.mp4": "/Palc/static/media/background.621ccd3ca54eec91116d.mp4",
     "static/media/merch7.jpg": "/Palc/static/media/merch7.58d371dd035fb0002237.jpg",
     "static/media/BeastHead.otf": "/Palc/static/media/BeastHead.5790c23583c7290d6530.otf",
     "static/media/merch4.jpg": "/Palc/static/media/merch4.417542f30f337628bfca.jpg",
@@ -17,12 +18,12 @@
     "static/media/merch2.jpg": "/Palc/static/media/merch2.a4a96e5ff61980fdbbf4.jpg",
     "static/media/merch6.jpg": "/Palc/static/media/merch6.abebe4196e7ee039c383.jpg",
     "index.html": "/Palc/index.html",
-    "main.1b28a63d.css.map": "/Palc/static/css/main.1b28a63d.css.map",
-    "main.5e5eeee4.js.map": "/Palc/static/js/main.5e5eeee4.js.map",
+    "main.639c4a07.css.map": "/Palc/static/css/main.639c4a07.css.map",
+    "main.1c0ebbeb.js.map": "/Palc/static/js/main.1c0ebbeb.js.map",
     "453.0145a977.chunk.js.map": "/Palc/static/js/453.0145a977.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b28a63d.css",
-    "static/js/main.5e5eeee4.js"
+    "static/css/main.639c4a07.css",
+    "static/js/main.1c0ebbeb.js"
   ]
 }

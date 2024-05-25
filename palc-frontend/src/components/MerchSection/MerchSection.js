@@ -8,6 +8,7 @@ import merch5 from '../../images/merch5.jpg';
 import merch6 from '../../images/merch6.jpg';
 import merch7 from '../../images/merch7.jpg';
 import merch8 from '../../images/merch8.jpeg';
+import backgroundVideo from '../../videos/background.mp4';
 
 const MerchSection = () => {
   const merchItems = [
@@ -23,6 +24,10 @@ const MerchSection = () => {
 
   return (
     <section className="merch-section">
+      <video className="background-video" autoPlay muted loop>
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <h2>Наш Мерч</h2>
       <div className="merch-items">
         {merchItems.map(item => (

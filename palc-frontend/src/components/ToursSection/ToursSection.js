@@ -1,5 +1,6 @@
 import React from 'react';
 import './ToursSection.css';
+import backgroundVideo from '../../videos/background.mp4';
 
 const tours = [
   { date: 'jun. 25, 2024', venue: 'Олимпийский', location: 'Москва, Россия', link: '#' },
@@ -16,6 +17,10 @@ const tours = [
 const ToursSection = () => {
   return (
     <section className="tours-section">
+      <video className="background-video" autoPlay muted loop>
+        <source src={backgroundVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <h2>Palc в вашем городе!</h2>
       <p>Или нет, но тут вы могли бы найти свой город</p>
       <div className="tours-table">

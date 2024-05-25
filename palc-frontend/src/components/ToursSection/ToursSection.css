@@ -1,8 +1,19 @@
 .tours-section {
+  position: relative;
   padding: 40px 20px;
-  background-color: #000;
   color: #fff;
   text-align: center;
+  overflow: hidden; /* Для обеспечения наложения видео */
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .tours-section h2 {

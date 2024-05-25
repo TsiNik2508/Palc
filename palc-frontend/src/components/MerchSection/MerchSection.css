@@ -1,9 +1,19 @@
-/* MerchSection.css */
 .merch-section {
+  position: relative;
   padding: 40px 20px;
-  background-color: #000;
   color: #fff;
   text-align: center;
+  overflow: hidden; 
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .merch-section h2 {
@@ -20,7 +30,7 @@
 .merch-item {
   width: calc(25% - 40px);
   margin: 20px;
-  background-color: #111;
+  background-color: rgba(17, 17, 17, 0.8); 
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -32,8 +42,8 @@
 
 .merch-item img {
   width: 100%;
-  height: 300px; /* Устанавливаем одинаковую высоту для всех изображений */
-  object-fit: cover; /* Сохраняем соотношение сторон и обрезаем лишнее */
+  height: 300px; 
+  object-fit: cover; 
 }
 
 .merch-info {

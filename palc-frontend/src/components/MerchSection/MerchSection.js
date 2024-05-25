@@ -1,39 +1,37 @@
-import React, { useState } from 'react';
-import { FaShoppingCart, FaCheck } from 'react-icons/fa';
+import React from 'react';
 import './MerchSection.css';
+import merch1 from '../../images/merch1.jpg';
+import merch2 from '../../images/merch2.jpg';
+import merch3 from '../../images/merch3.jpg';
+import merch4 from '../../images/merch4.jpg';
+import merch5 from '../../images/merch5.jpg';
+import merch6 from '../../images/merch6.jpg';
+import merch7 from '../../images/merch7.jpg';
+import merch8 from '../../images/merch8.jpeg';
 
 const MerchSection = () => {
   const merchItems = [
-    { id: 1, title: 'А', price: '$20', image: '/assets/merch5.jpg' },
-    { id: 2, title: 'Тут', price: '$40', image: '/assets/merch5.jpg' },
-    { id: 3, title: 'Мог', price: '$15', image: '/assets/merch5.jpg' },
-    { id: 4, title: 'Быть', price: '$10', image: '/assets/merch5.jpg' },
-    { id: 5, title: 'Мерч', price: '$30', image: '/assets/merch5.jpg' },
-    { id: 6, title: 'Но', price: '$12', image: '/assets/merch5.jpg' },
-    { id: 7, title: 'Его', price: '$5', image: '/assets/merch5.jpg' },
-    { id: 8, title: 'Нет', price: '$8', image: '/assets/merch5.jpg' },
+    { id: 1, image: merch1, title: 'Тут', price: '£100', button: 'Добавить в корзину' },
+    { id: 2, image: merch2, title: 'мог', price: '£1000', button: 'Добавить в корзину' },
+    { id: 3, image: merch3, title: 'Бы', price: '£320', button: 'Добавить в корзину' },
+    { id: 4, image: merch4, title: 'Быть', price: '£320.00', button: 'Добавить в корзину' },
+    { id: 5, image: merch5, title: 'Мерч', price: '£99.99', button: 'Добавить в корзину' },
+    { id: 6, image: merch6, title: 'Но', price: '£48.00', button: 'Добавить в корзину' },
+    { id: 7, image: merch7, title: 'Его', price: '£58.00', button: 'Добавить в корзину' },
+    { id: 8, image: merch8, title: 'Нет', price: '£68.00', button: 'Добавить в корзину' }
   ];
-
-  const [cart, setCart] = useState(Array(merchItems.length).fill(false));
-
-  const toggleCart = (index) => {
-    const newCart = [...cart];
-    newCart[index] = !newCart[index];
-    setCart(newCart);
-  };
 
   return (
     <section className="merch-section">
-      <div className="merch-container">
-        {merchItems.map((item, index) => (
-          <div className="merch-card" key={item.id}>
+      <h2>Наш Мерч</h2>
+      <div className="merch-items">
+        {merchItems.map(item => (
+          <div className="merch-item" key={item.id}>
             <img src={item.image} alt={item.title} />
             <div className="merch-info">
               <h3>{item.title}</h3>
               <p>{item.price}</p>
-            </div>
-            <div className="merch-icon" onClick={() => toggleCart(index)}>
-              {cart[index] ? <FaCheck /> : <FaShoppingCart />}
+              <button className="merch-button">{item.button}</button>
             </div>
           </div>
         ))}

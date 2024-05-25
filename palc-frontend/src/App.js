@@ -10,26 +10,14 @@ import ToursSection from '../src/components/ToursSection/ToursSection.js';
 
 function App() {
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <div className="App">
         <Header />
         <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <div>
-                  <LogoSection />
-                  <AlbumCardsSection />
-                  <MerchSection />
-                  <ToursSection />
-                </div>
-              }
-            />
-            <Route path="/music" element={<MusicPage />} />
-            <Route path="/tours" element={<ToursPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-          </Routes>
+          <LogoSection />
+          <AlbumCardsSection />
+          <MerchSection />
+          <ToursSection />
         </main>
         <Footer />
       </div>

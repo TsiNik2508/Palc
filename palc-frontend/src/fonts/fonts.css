@@ -5,3 +5,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Beast';
+  src: url('../fonts/BeastHead.otf') format('otf'); 
+  font-weight: normal;
+  font-style: normal;
+}

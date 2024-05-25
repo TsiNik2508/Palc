@@ -2,103 +2,88 @@
   padding: 40px 20px;
   background-color: #000;
   color: #fff;
+  text-align: center;
 }
 
-.tours-header {
-  font-size: 24px;
-  text-align: center;
+.tours-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.tours-section p {
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
-.tours-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0 10%;
+.tours-table {
+  width: 100%; 
 }
 
-.tour-card {
-  background-color: #333;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%;
+.tour-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 20px 40px; 
+  border-bottom: 1px solid #333;
 }
 
-.tour-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.tour-date {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.tour-city {
-  font-size: 16px;
-  color: #ccc;
+.tour-date, .tour-venue, .tour-location, .tour-link {
+  flex: 1;
+  text-align: left;
 }
 
 .tour-link {
-  background-color: #555;
+  text-align: right;
+}
+
+.tour-button {
+  background-color: #fff;
+  color: #000;
   padding: 10px 20px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 30px; 
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tour-button:hover {
+  background-color: #3cf000;
   color: #fff;
-  transition: background-color 0.3s;
 }
 
-.tour-link:hover {
-  background-color: #777;
-}
-
-/* Адаптивные стили */
 @media (max-width: 1024px) {
-  .tours-container {
-    margin: 0 auto;
-  }
-
-  .tour-card {
+  .tour-row {
     flex-direction: column;
     align-items: center;
+    padding: 30px 20px; 
+  }
+
+  .tour-date, .tour-venue, .tour-location {
     text-align: center;
+    margin-bottom: 10px; 
   }
 
   .tour-link {
+    text-align: center;
     margin-top: 10px;
-    align-self: center;
   }
 }
 
 @media (max-width: 768px) {
-  .tours-header {
-    font-size: 20px;
+  .tour-row {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px; 
   }
 
-  .tour-date {
-    font-size: 16px;
-  }
-
-  .tour-city {
-    font-size: 14px;
+  .tour-date, .tour-venue, .tour-location {
+    text-align: center;
+    margin-bottom: 15px; 
   }
 
   .tour-link {
-    font-size: 14px;
-    padding: 8px 16px;
+    text-align: center;
+    margin-top: 15px;
   }
-}
-
-@media (max-width: 480px) {
-  .tours-container {
-    padding: 0 2%;
-  }
-
-  .tour-card {
-    padding: 0;
-  }
-
 }

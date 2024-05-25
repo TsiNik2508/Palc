@@ -13,23 +13,15 @@
 
 .footer__social a {
   color: #fff;
-  font-size: 24px;
-  transition: color 0.3s;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer__social a:hover {
-  color: #777;
+  color:  #3cf000; 
 }
 
-/* Адаптивные стили */
-@media (max-width: 768px) {
-  .footer__social a {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer__social a {
-    font-size: 18px;
-  }
+.footer__social svg {
+  width: 24px;
+  height: 24px;
 }

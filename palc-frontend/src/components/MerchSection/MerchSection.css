@@ -1,32 +1,43 @@
+/* MerchSection.css */
 .merch-section {
   padding: 40px 20px;
   background-color: #000;
+  color: #fff;
+  text-align: center;
 }
 
-.merch-container {
+.merch-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.merch-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
 }
 
-.merch-card {
-  background-color: #fff;
+.merch-item {
+  width: calc(25% - 40px);
+  margin: 20px;
+  background-color: #111;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-align: center;
-  width: 200px;
-  position: relative;
+  transition: transform 0.3s ease;
 }
 
-.merch-card img {
+.merch-item:hover {
+  transform: scale(1.05);
+}
+
+.merch-item img {
   width: 100%;
-  height: auto;
+  height: 300px; /* Устанавливаем одинаковую высоту для всех изображений */
+  object-fit: cover; /* Сохраняем соотношение сторон и обрезаем лишнее */
 }
 
 .merch-info {
-  padding: 10px;
+  padding: 20px;
 }
 
 .merch-info h3 {
@@ -36,31 +47,32 @@
 
 .merch-info p {
   font-size: 16px;
-  color: #888;
+  margin: 10px 0;
 }
 
-.merch-icon {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
+.merch-button {
+  background-color: #fff;
   color: #000;
-  transition: color 0.3s;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.merch-icon:hover {
-  color: #888;
+.merch-button:hover {
+  background-color: #3cf000;
+  color: #fff;
 }
 
-@media (max-width: 768px) {
-  .merch-card {
-    width: 45%;
+@media (max-width: 1024px) {
+  .merch-item {
+    width: calc(50% - 40px);
   }
 }
 
-@media (max-width: 480px) {
-  .merch-card {
+@media (max-width: 768px) {
+  .merch-item {
     width: 100%;
   }
 }

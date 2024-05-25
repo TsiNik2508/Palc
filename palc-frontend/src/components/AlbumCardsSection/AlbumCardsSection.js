@@ -1,23 +1,36 @@
 import React from 'react';
 import './AlbumCardsSection.css';
+import album1 from '../../images/album1.jpg';
+import album2 from '../../images/album2.jpg';
+import album3 from '../../images/album3.jpg';
+import album4 from '../../images/album4.jpg';
 
 const AlbumCardsSection = () => {
-  const albums = [
-    { id: 1, title: 'Музыка', image: '/assets/album1.jpg', link: '/tours' },
-    { id: 2, title: 'Клипы', image: '/assets/album2.jpg', link: '/store' },
-    { id: 3, title: 'Туры', image: '/assets/album3.jpg', link: '/news' },
-    { id: 4, title: 'Мерч', image: '/assets/album4.jpg', link: '/music' },
-  ];
-
   return (
     <section className="album-cards-section">
-      <div className="cards-container">
-        {albums.map(album => (
-          <a href={album.link} className="card" key={album.id}>
-            <img src={album.image} alt={album.title} />
-            <div className="card-title">{album.title}</div>
-          </a>
-        ))}
+      <div className="album-card">
+        <a href="/creativity">
+          <img src={album1} alt="Album 1" />
+          <div className="card-caption">Творчество</div>
+        </a>
+      </div>
+      <div className="album-card">
+        <a href="/tours">
+          <img src={album2} alt="Album 2" />
+          <div className="card-caption">Туры</div>
+        </a>
+      </div>
+      <div className="album-card">
+        <a href="/merch">
+          <img src={album3} alt="Album 3" />
+          <div className="card-caption">Мерч</div>
+        </a>
+      </div>
+      <div className="album-card">
+        <a href="/gallery">
+          <img src={album4} alt="Album 4" />
+          <div className="card-caption">Галлерея</div>
+        </a>
       </div>
     </section>
   );

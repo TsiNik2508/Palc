@@ -7,6 +7,11 @@ import LogoSection from '../src/components/LogoSection/LogoSection.js';
 import AlbumCardsSection from '../src/components/AlbumCardsSection/AlbumCardsSection.js';
 import MerchSection from '../src/components/MerchSection/MerchSection.js';
 import ToursSection from '../src/components/ToursSection/ToursSection.js';
+import CreativityPage from '../src/components/CreativityPage/CreativityPage.js';
+import ToursPage from '../src/components/ToursPage/ToursPage.js';
+import MerchPage from '../src/components/MerchPage/MerchPage.js'; 
+import Gallery from '../src/components/Gallery/Gallery.js';
+
 
 function App() {
   return (
@@ -14,19 +19,28 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <LogoSection />
-          <AlbumCardsSection />
-          <MerchSection />
-          <ToursSection />
+          <Routes>
+            <Route path="/" element={
+              <div>
+                <LogoSection />
+                <AlbumCardsSection />
+                <MerchSection showTitle={true} />
+                <ToursSection />
+              </div>
+            } />
+            <Route path="/creativity" element={<CreativityPage />} />
+            <Route path="/tours" element={<ToursPage />} />
+            <Route path="/merch" element={<MerchPage />} /> 
+            <Route path="/music" element={<MusicPage />} />
+            <Route path="/gallery" element={<Gallery />} />
+          </Routes>
         </main>
         <Footer />
       </div>
     </Router>
   );
 }
-
 const MusicPage = () => <div>Музыка</div>;
-const ToursPage = () => <div>Туры</div>;
 const GalleryPage = () => <div>Галерея</div>;
 
 export default App;

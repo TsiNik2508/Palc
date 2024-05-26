@@ -4,15 +4,10 @@ import album1 from '../../images/album1.jpg';
 import album2 from '../../images/album2.jpg';
 import album3 from '../../images/album3.jpg';
 import album4 from '../../images/album4.jpg';
-import backgroundVideo from '../../videos/background.mp4';
 
 const AlbumCardsSection = () => {
   return (
     <section className="album-cards-section">
-      <video className="background-video" autoPlay muted loop>
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       <div className="album-card">
         <a href="/creativity">
           <img src={album1} alt="Album 1" />

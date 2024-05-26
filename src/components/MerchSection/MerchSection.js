@@ -47,7 +47,7 @@ const MerchSection = ({ showTitle = true }) => {
             <div className="merch-info">
               <h3>{item.title}</h3>
               <p>{item.price}</p>
-              <button className="merch-button" onClick={(e) => handleBuyClick(e, '/merch')}>Купить</button>
+              <button className="merch-button" onClick={(e) => handleBuyClick(e, '/Palc/merch')}>Купить</button>
             </div>
           </div>
         ))}
@@ -61,7 +61,7 @@ const MerchSection = ({ showTitle = true }) => {
               <h3>{selectedItem.title}</h3>
               <p>{selectedItem.price}</p>
               <p>{selectedItem.description}</p>
-              <button className="popup-buy-button" onClick={() => window.location.href = '/merch'}>Купить</button>
+              <button className="popup-buy-button" onClick={() => window.location.href = '/Palc/merch'}>Купить</button>
             </div>
           </div>
         </div>

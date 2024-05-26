@@ -11,10 +11,12 @@ import CreativityPage from '../src/components/CreativityPage/CreativityPage.js';
 import ToursPage from '../src/components/ToursPage/ToursPage.js';
 import MerchPage from '../src/components/MerchPage/MerchPage.js';
 import Gallery from '../src/components/Gallery/Gallery.js';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
   return (
     <Router basename="/Palc">
+      <ScrollToTop />
       <div className="App">
         <Header />
         <main>

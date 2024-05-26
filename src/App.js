@@ -9,13 +9,12 @@ import MerchSection from '../src/components/MerchSection/MerchSection.js';
 import ToursSection from '../src/components/ToursSection/ToursSection.js';
 import CreativityPage from '../src/components/CreativityPage/CreativityPage.js';
 import ToursPage from '../src/components/ToursPage/ToursPage.js';
-import MerchPage from '../src/components/MerchPage/MerchPage.js'; 
+import MerchPage from '../src/components/MerchPage/MerchPage.js';
 import Gallery from '../src/components/Gallery/Gallery.js';
-
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Palc">
       <div className="App">
         <Header />
         <main>
@@ -30,7 +29,7 @@ function App() {
             } />
             <Route path="/creativity" element={<CreativityPage />} />
             <Route path="/tours" element={<ToursPage />} />
-            <Route path="/merch" element={<MerchPage />} /> 
+            <Route path="/merch" element={<MerchPage />} />
             <Route path="/music" element={<MusicPage />} />
             <Route path="/gallery" element={<Gallery />} />
           </Routes>
@@ -40,6 +39,7 @@ function App() {
     </Router>
   );
 }
+
 const MusicPage = () => <div>Музыка</div>;
 const GalleryPage = () => <div>Галерея</div>;
 

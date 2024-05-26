@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './MerchSection.css';
 import merch1 from '../../images/merch1.jpg';
 import merch2 from '../../images/merch2.jpg';

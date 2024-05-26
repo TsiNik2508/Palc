@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AlbumCardsSection.css';
 import album1 from '../../images/album1.jpg';
 import album2 from '../../images/album2.jpg';
@@ -9,28 +10,28 @@ const AlbumCardsSection = () => {
   return (
     <section className="album-cards-section">
       <div className="album-card">
-        <a href="/creativity">
+        <Link to="/creativity">
           <img src={album1} alt="Album 1" />
           <div className="card-caption">Творчество</div>
-        </a>
+        </Link>
       </div>
       <div className="album-card">
-        <a href="/tours">
+        <Link to="/tours">
           <img src={album2} alt="Album 2" />
           <div className="card-caption">Туры</div>
-        </a>
+        </Link>
       </div>
       <div className="album-card">
-        <a href="/merch">
+        <Link to="/merch">
           <img src={album3} alt="Album 3" />
           <div className="card-caption">Мерч</div>
-        </a>
+        </Link>
       </div>
       <div className="album-card">
-        <a href="/gallery">
+        <Link to="/gallery">
           <img src={album4} alt="Album 4" />
           <div className="card-caption">Галлерея</div>
-        </a>
+        </Link>
       </div>
     </section>
   );

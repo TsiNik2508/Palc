@@ -28,11 +28,6 @@ const MerchSection = ({ showTitle = true }) => {
     setSelectedItem(item);
   };
 
-  const handleBuyClick = (e, link) => {
-    e.stopPropagation();
-    window.location.href = link;
-  };
-
   const handleClosePopup = () => {
     setSelectedItem(null);
   };
@@ -47,7 +42,7 @@ const MerchSection = ({ showTitle = true }) => {
             <div className="merch-info">
               <h3>{item.title}</h3>
               <p>{item.price}</p>
-              <button className="merch-button" onClick={(e) => handleBuyClick(e, '/Palc/merch')}>Купить</button>
+              <Link to="/merch" className="merch-button">Купить</Link>
             </div>
           </div>
         ))}
@@ -61,7 +56,7 @@ const MerchSection = ({ showTitle = true }) => {
               <h3>{selectedItem.title}</h3>
               <p>{selectedItem.price}</p>
               <p>{selectedItem.description}</p>
-              <button className="popup-buy-button" onClick={() => window.location.href = '/Palc/merch'}>Купить</button>
+              <Link to="/merch" className="popup-buy-button">Купить</Link>
             </div>
           </div>
         </div>

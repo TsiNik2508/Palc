@@ -1,19 +1,16 @@
 {
   "files": {
-    "main.css": "/Palc/static/css/main.0723848a.css",
-    "main.js": "/Palc/static/js/main.8c3c44ca.js",
-    "static/js/453.0145a977.chunk.js": "/Palc/static/js/453.0145a977.chunk.js",
-    "static/media/merch7.jpg": "/Palc/static/media/merch7.58d371dd035fb0002237.jpg",
+    "main.css": "/Palc/static/css/main.f91ca771.css",
+    "main.js": "/Palc/static/js/main.bc51a902.js",
+    "static/js/453.d0090c89.chunk.js": "/Palc/static/js/453.d0090c89.chunk.js",
     "static/media/BeastHead.otf": "/Palc/static/media/BeastHead.5790c23583c7290d6530.otf",
     "static/media/palcAlbum1.jpg": "/Palc/static/media/palcAlbum1.cb94f0692fc118663322.jpg",
     "static/media/palcAlbum11.jpg": "/Palc/static/media/palcAlbum11.0580842682b81b22f84a.jpg",
-    "static/media/merch4.jpg": "/Palc/static/media/merch4.417542f30f337628bfca.jpg",
     "static/media/palcAlbum6.jpg": "/Palc/static/media/palcAlbum6.45e03f76bc72887826df.jpg",
     "static/media/palcAlbum4.jpg": "/Palc/static/media/palcAlbum4.e047ff25971e14da47b2.jpg",
     "static/media/palcAlbum8.jpg": "/Palc/static/media/palcAlbum8.26cd123208e4ea101f41.jpg",
     "static/media/palcAlbum7.jpg": "/Palc/static/media/palcAlbum7.954ad4b0cbebb76119c1.jpg",
     "static/media/palcAlbum12.jpg": "/Palc/static/media/palcAlbum12.882b895eea53c6813b46.jpg",
-    "static/media/merch8.jpeg": "/Palc/static/media/merch8.67a1acb04de106a594c2.jpeg",
     "static/media/palcAlbum3.jpg": "/Palc/static/media/palcAlbum3.5166d54dbdf6f11cce2a.jpg",
     "static/media/palcAlbum5.jpg": "/Palc/static/media/palcAlbum5.4942c2296ad7da4fec17.jpg",
     "static/media/palcAlbum13.jpg": "/Palc/static/media/palcAlbum13.689164aa38cf73a13cc4.jpg",
@@ -31,18 +28,15 @@
     "static/media/merch1.jpg": "/Palc/static/media/merch1.ff2ef44d687b4136e608.jpg",
     "static/media/album4.jpg": "/Palc/static/media/album4.33a81beef0c8797d562d.jpg",
     "static/media/album3.jpg": "/Palc/static/media/album3.9d2a1b390df5cbc68011.jpg",
-    "static/media/merch3.jpg": "/Palc/static/media/merch3.2e2bc9db95dff2b14bee.jpg",
     "static/media/VoDvore.jpg": "/Palc/static/media/VoDvore.6c72600259a475d12f28.jpg",
-    "static/media/merch2.jpg": "/Palc/static/media/merch2.a4a96e5ff61980fdbbf4.jpg",
     "static/media/tam.jpg": "/Palc/static/media/tam.47ac27c216d4950dd972.jpg",
-    "static/media/merch6.jpg": "/Palc/static/media/merch6.abebe4196e7ee039c383.jpg",
     "index.html": "/Palc/index.html",
-    "main.0723848a.css.map": "/Palc/static/css/main.0723848a.css.map",
-    "main.8c3c44ca.js.map": "/Palc/static/js/main.8c3c44ca.js.map",
-    "453.0145a977.chunk.js.map": "/Palc/static/js/453.0145a977.chunk.js.map"
+    "main.f91ca771.css.map": "/Palc/static/css/main.f91ca771.css.map",
+    "main.bc51a902.js.map": "/Palc/static/js/main.bc51a902.js.map",
+    "453.d0090c89.chunk.js.map": "/Palc/static/js/453.d0090c89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0723848a.css",
-    "static/js/main.8c3c44ca.js"
+    "static/css/main.f91ca771.css",
+    "static/js/main.bc51a902.js"
   ]
 }

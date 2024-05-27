@@ -26,11 +26,11 @@
   width: 100%;
   padding: 20px 40px; 
   border-bottom: 1px solid #333;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .tour-row:hover {
-  background-color: rgba(60, 240, 0, 0.3);
+  background: linear-gradient(to right, rgba(60, 240, 0, 0.3), rgba(60, 240, 0, 0));
 }
 
 .tour-date, .tour-venue, .tour-location, .tour-link {

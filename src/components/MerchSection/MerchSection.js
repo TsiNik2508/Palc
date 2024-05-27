@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
@@ -9,6 +9,7 @@ const MerchSection = () => {
   const [selectedMerch, setSelectedMerch] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const timerRef = useRef(null); // Ref для хранения таймера
 
   const merchItems = [
     { id: 1, title: 'Тут', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
@@ -29,12 +30,20 @@ const MerchSection = () => {
     setSelectedMerch(null);
   };
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  // Функция для запуска таймера
+  const startTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+    timerRef.current = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % merchItems.length);
     }, 15000);
+  };
 
-    return () => clearInterval(timer);
+  useEffect(() => {
+    startTimer(); // Запуск таймера при монтировании компонента
+
+    return () => clearInterval(timerRef.current); // Очистка таймера при размонтировании компонента
   }, []);
 
   useEffect(() => {
@@ -60,6 +69,10 @@ const MerchSection = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    startTimer(); // Сброс таймера при изменении слайда
+  }, [currentSlide]);
 
   const getCarouselProps = () => {
     if (windowWidth < 768) {

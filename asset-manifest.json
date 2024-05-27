@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Palc/static/css/main.fdeb7a0e.css",
-    "main.js": "/Palc/static/js/main.b76cc4bd.js",
+    "main.css": "/Palc/static/css/main.2f43c022.css",
+    "main.js": "/Palc/static/js/main.60694e57.js",
     "static/js/453.d0090c89.chunk.js": "/Palc/static/js/453.d0090c89.chunk.js",
     "static/media/BeastHead.otf": "/Palc/static/media/BeastHead.5790c23583c7290d6530.otf",
     "static/media/palcAlbum1.jpg": "/Palc/static/media/palcAlbum1.cb94f0692fc118663322.jpg",
@@ -31,12 +31,12 @@
     "static/media/VoDvore.jpg": "/Palc/static/media/VoDvore.6c72600259a475d12f28.jpg",
     "static/media/tam.jpg": "/Palc/static/media/tam.47ac27c216d4950dd972.jpg",
     "index.html": "/Palc/index.html",
-    "main.fdeb7a0e.css.map": "/Palc/static/css/main.fdeb7a0e.css.map",
-    "main.b76cc4bd.js.map": "/Palc/static/js/main.b76cc4bd.js.map",
+    "main.2f43c022.css.map": "/Palc/static/css/main.2f43c022.css.map",
+    "main.60694e57.js.map": "/Palc/static/js/main.60694e57.js.map",
     "453.d0090c89.chunk.js.map": "/Palc/static/js/453.d0090c89.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdeb7a0e.css",
-    "static/js/main.b76cc4bd.js"
+    "static/css/main.2f43c022.css",
+    "static/js/main.60694e57.js"
   ]
 }

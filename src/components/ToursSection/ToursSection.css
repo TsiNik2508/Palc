@@ -26,6 +26,11 @@
   width: 100%;
   padding: 20px 40px; 
   border-bottom: 1px solid #333;
+  transition: box-shadow 0.3s ease;
+}
+
+.tour-row:hover {
+  box-shadow: 0 5px 8px rgba(255, 255, 255, 0.3);
 }
 
 .tour-date, .tour-venue, .tour-location, .tour-link {

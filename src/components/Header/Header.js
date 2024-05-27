@@ -10,16 +10,20 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
-        <Link to="/" className="logo">Palc</Link>
+        <Link to="/" className="logo" onClick={closeMenu}>Palc</Link>
         <nav className={`navigation ${isMenuOpen ? 'open' : ''}`}>
           <ul className="nav-links">
-            <li><Link to="/creativity">Творчество</Link></li>
-            <li><Link to="/tours">Туры</Link></li>
-            <li><Link to="/merch">Мерч</Link></li>
-            <li><Link to="/gallery">Галлерея</Link></li>
+            <li><Link to="/creativity" onClick={closeMenu}>Творчество</Link></li>
+            <li><Link to="/tours" onClick={closeMenu}>Туры</Link></li>
+            <li><Link to="/merch" onClick={closeMenu}>Мерч</Link></li>
+            <li><Link to="/gallery" onClick={closeMenu}>Галерея</Link></li>
           </ul>
           <ul className="social-links">
             <li><a href="https://vk.com/palcband"><FaVk size={24} /></a></li>

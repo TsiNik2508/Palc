@@ -1,67 +1,140 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-responsive-carousel';
 import { Link } from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './MerchSection.css';
-import merch1 from '../../images/merch1.jpg';
-import merch2 from '../../images/merch2.jpg';
-import merch3 from '../../images/merch3.jpg';
-import merch4 from '../../images/merch4.jpg';
-import merch5 from '../../images/merch5.jpg';
-import merch6 from '../../images/merch6.jpg';
-import merch7 from '../../images/merch7.jpg';
-import merch8 from '../../images/merch8.jpeg';
+import merchImage from '../../images/merch1.jpg';
 
-const MerchSection = ({ showTitle = true }) => {
-  const [selectedItem, setSelectedItem] = useState(null);
+const MerchSection = () => {
+  const [selectedMerch, setSelectedMerch] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const merchItems = [
-    { id: 1, image: merch1, title: 'Тут', price: '£100', description: 'Описание товара 1' },
-    { id: 2, image: merch2, title: 'мог', price: '£1000', description: 'Описание товара 2' },
-    { id: 3, image: merch3, title: 'Бы', price: '£320', description: 'Описание товара 3' },
-    { id: 4, image: merch4, title: 'Быть', price: '£320.00', description: 'Описание товара 4' },
-    { id: 5, image: merch5, title: 'Мерч', price: '£99.99', description: 'Описание товара 5' },
-    { id: 6, image: merch6, title: 'Но', price: '£48.00', description: 'Описание товара 6' },
-    { id: 7, image: merch7, title: 'Его', price: '£58.00', description: 'Описание товара 7' },
-    { id: 8, image: merch8, title: 'Нет', price: '£68.00', description: 'Описание товара 8' }
+    { id: 1, title: 'Тут', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 2, title: 'Мог', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 3, title: 'Бы', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 4, title: 'Быть', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 5, title: 'Мерч', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 6, title: 'Но', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 7, title: 'Его', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    { id: 8, title: 'Нет:(', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
   ];
 
-  const handleItemClick = (item) => {
-    setSelectedItem(item);
+  const handleCardClick = (index) => {
+    setSelectedMerch(merchItems[index]);
   };
 
   const handleClosePopup = () => {
-    setSelectedItem(null);
+    setSelectedMerch(null);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % merchItems.length);
+    }, 15000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        handleClosePopup();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const getCarouselProps = () => {
+    if (windowWidth < 768) {
+      return {
+        showThumbs: false,
+        showStatus: false,
+        infiniteLoop: true,
+        selectedItem: currentSlide,
+        centerMode: false,
+        swipeable: true,
+        emulateTouch: true,
+        onChange: (index) => setCurrentSlide(index),
+        showArrows: true,
+      };
+    }
+
+    if (windowWidth < 1085) {
+      return {
+        showThumbs: false,
+        showStatus: false,
+        infiniteLoop: true,
+        selectedItem: currentSlide,
+        centerMode: true,
+        centerSlidePercentage: 80,
+        swipeable: true,
+        emulateTouch: true,
+        onChange: (index) => setCurrentSlide(index),
+        showArrows: true,
+      };
+    }
+
+    return {
+      showThumbs: false,
+      showStatus: false,
+      infiniteLoop: true,
+      selectedItem: currentSlide,
+      centerMode: true,
+      centerSlidePercentage: 40,
+      swipeable: true,
+      emulateTouch: true,
+      onChange: (index) => setCurrentSlide(index),
+    };
   };
 
   return (
-    <section className="merch-section">
-      {showTitle && <h2>Наш Мерч</h2>}
-      <div className="merch-items">
-        {merchItems.map(item => (
-          <div className="merch-item" key={item.id} onClick={() => handleItemClick(item)}>
-            <img src={item.image} alt={item.title} />
+    <div className="merch-section">
+      <h2>Наш мерч</h2>
+      <Carousel {...getCarouselProps()}>
+        {merchItems.map((merch, index) => (
+          <div
+            key={merch.id}
+            className={`merch-card ${index === currentSlide ? 'center-card' : 'semi-transparent'}`}
+            onClick={() => handleCardClick(index)}
+          >
+            <img src={merchImage} alt={merch.title} />
             <div className="merch-info">
-              <h3>{item.title}</h3>
-              <p>{item.price}</p>
-              <Link to="/merch" className="merch-button">Купить</Link>
+              <h3>{merch.title}</h3>
+              <p>{merch.price}</p>
+              <Link to={`/merch`} className="buy-button" onClick={(e) => e.stopPropagation()}>Купить</Link>
             </div>
           </div>
         ))}
-      </div>
-      {selectedItem && (
-        <div className="popup-overlay" onClick={handleClosePopup}>
-          <div className="popup-content" onClick={e => e.stopPropagation()}>
-            <button className="close-button" onClick={handleClosePopup}>&times;</button>
-            <img src={selectedItem.image} alt={selectedItem.title} />
-            <div className="popup-info">
-              <h3>{selectedItem.title}</h3>
-              <p>{selectedItem.price}</p>
-              <p>{selectedItem.description}</p>
-              <Link to="/merch" className="popup-buy-button">Купить</Link>
-            </div>
+      </Carousel>
+      {selectedMerch && (
+        <div className="merch-popup" onClick={handleClosePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <span className="close-button" onClick={handleClosePopup}>&times;</span>
+            <img src={merchImage} alt={selectedMerch.title} />
+            <h3>{selectedMerch.title}</h3>
+            <p>{selectedMerch.description}</p>
+            <p>{selectedMerch.price}</p>
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 

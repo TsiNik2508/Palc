@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Palc/static/css/main.f91ca771.css",
-    "main.js": "/Palc/static/js/main.bc51a902.js",
+    "main.js": "/Palc/static/js/main.b76cc4bd.js",
     "static/js/453.d0090c89.chunk.js": "/Palc/static/js/453.d0090c89.chunk.js",
     "static/media/BeastHead.otf": "/Palc/static/media/BeastHead.5790c23583c7290d6530.otf",
     "static/media/palcAlbum1.jpg": "/Palc/static/media/palcAlbum1.cb94f0692fc118663322.jpg",
@@ -32,11 +32,11 @@
     "static/media/tam.jpg": "/Palc/static/media/tam.47ac27c216d4950dd972.jpg",
     "index.html": "/Palc/index.html",
     "main.f91ca771.css.map": "/Palc/static/css/main.f91ca771.css.map",
-    "main.bc51a902.js.map": "/Palc/static/js/main.bc51a902.js.map",
+    "main.b76cc4bd.js.map": "/Palc/static/js/main.b76cc4bd.js.map",
     "453.d0090c89.chunk.js.map": "/Palc/static/js/453.d0090c89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f91ca771.css",
-    "static/js/main.bc51a902.js"
+    "static/js/main.b76cc4bd.js"
   ]
 }

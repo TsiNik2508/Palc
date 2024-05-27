@@ -24,10 +24,12 @@ const MerchSection = () => {
 
   const handleCardClick = (index) => {
     setSelectedMerch(merchItems[index]);
+    clearInterval(timerRef.current); // Остановка таймера при открытии попапа
   };
 
   const handleClosePopup = () => {
     setSelectedMerch(null);
+    startTimer(); // Возобновление таймера при закрытии попапа
   };
 
   // Функция для запуска таймера
@@ -37,7 +39,7 @@ const MerchSection = () => {
     }
     timerRef.current = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % merchItems.length);
-    }, 15000);
+    }, 8000);
   };
 
   useEffect(() => {
@@ -71,8 +73,10 @@ const MerchSection = () => {
   }, []);
 
   useEffect(() => {
-    startTimer(); // Сброс таймера при изменении слайда
-  }, [currentSlide]);
+    if (!selectedMerch) {
+      startTimer(); // Сброс таймера при изменении слайда, если попап не открыт
+    }
+  }, [currentSlide, selectedMerch]);
 
   const getCarouselProps = () => {
     if (windowWidth < 768) {

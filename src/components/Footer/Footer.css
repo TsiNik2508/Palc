@@ -1,3 +1,4 @@
+/* Основной блок подвала */
 .footer {
   background-color: #000;
   color: #fff;
@@ -5,23 +6,40 @@
   text-align: center;
 }
 
+/* Блок социальных ссылок */
 .footer__social {
   display: flex;
   justify-content: center;
-  gap: 20px;
 }
 
-.footer__social a {
+/* Список социальных ссылок */
+.footer__social-list {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Элемент списка социальных ссылок */
+.footer__social-item {
+  display: flex;
+}
+
+/* Ссылка на социальную сеть */
+.footer__link {
   color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer__social a:hover {
-  color:  #3cf000; 
+/* Изменение цвета ссылки при наведении */
+.footer__link:hover {
+  color: #3cf000; 
 }
 
-.footer__social svg {
+/* Размер иконок социальных сетей */
+.footer__link svg {
   width: 24px;
   height: 24px;
 }

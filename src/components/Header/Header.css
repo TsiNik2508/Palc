@@ -1,5 +1,6 @@
 @import url(../../fonts/fonts.css);
 
+/* Основной стиль для заголовка */
 .header {
   background-color: #000;
   color: #fff;
@@ -9,7 +10,8 @@
   z-index: 1000;
 }
 
-.container {
+/* Контейнер для содержимого заголовка */
+.header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,134 +19,151 @@
   height: 60px;
 }
 
-.logo {
+/* Логотип */
+.header__logo {
   font-size: 50px;
   text-decoration: none;
   color: #fff;
   font-family: 'Jacquard';
 }
 
-.navigation {
+/* Навигация */
+.header__navigation {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
 }
 
-.nav-links, .social-links {
+/* Ссылки навигации */
+.header__nav-links,
+.header__social-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.nav-links {
+/* Элементы ссылок навигации */
+.header__nav-links {
   flex: 1;
   justify-content: center;
   font-family: 'Jacquard';
 }
 
-.nav-links li, .social-links li {
+.header__nav-item,
+.header__social-item {
   margin: 0 10px;
 }
 
-.nav-links a, .social-links a {
+/* Ссылки навигации */
+.header__nav-link,
+.header__social-link {
   text-decoration: none;
   color: #fff;
-  font-size: 18px; 
+  font-size: 18px;
   transition: transform 0.3s, color 0.3s;
 }
 
-.nav-links a:hover, .social-links a:hover {
+.header__nav-link:hover,
+.header__social-link:hover {
   transform: scale(1.1);
   color: #3cf000;
 }
 
-.social-links li a {
+.header__social-link {
   display: flex;
   align-items: center;
 }
 
-.burger {
+/* Кнопка-бургер для мобильного меню */
+.header__burger {
   display: none;
   cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
 }
 
-.overlay {
+/* Оверлей для затемнения фона при открытом меню */
+.header__overlay {
   position: fixed;
-  top: 60px; 
+  top: 60px;
   left: 0;
   width: 100%;
-  height: calc(100% - 60px); 
+  height: calc(100% - 60px);
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 
+/* Адаптивность для устройств с шириной экрана до 1024px */
 @media (max-width: 1024px) {
-  .logo {
+  .header__logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  .navigation {
+  .header__navigation {
     display: none;
     position: fixed;
-    top: 60px; 
+    top: 60px;
     left: 0;
     width: 250px;
-    height: calc(100% - 60px); 
+    height: calc(100% - 60px);
     background-color: #000;
     flex-direction: column;
-    align-items: flex-start; 
-    text-align: left; 
-    z-index: 1001; 
+    align-items: flex-start;
+    text-align: left;
+    z-index: 1001;
     overflow-y: auto;
   }
 
-  .navigation.open {
+  .header__navigation.header__navigation--open {
     display: flex;
   }
 
-  .nav-links {
+  .header__nav-links {
     flex-direction: column;
     margin-bottom: 100px;
     gap: 15px;
-    padding-left: 20px; 
+    padding-left: 20px;
   }
 
-  .social-links {
+  .header__social-links {
     flex-direction: row;
     background-color: #333;
     width: 100%;
     justify-content: center;
     padding: 10px 0;
-    margin-top: auto; 
+    margin-top: auto;
   }
 
-  .burger {
+  .header__burger {
     display: block;
     z-index: 1002;
   }
 }
 
+/* Адаптивность для устройств с шириной экрана до 768px */
 @media (max-width: 768px) {
-  .navigation {
+  .header__navigation {
     width: 100%;
-    height: calc(100% - 60px); 
+    height: calc(100% - 60px);
   }
 
-  .nav-links li, .social-links li {
+  .header__nav-item,
+  .header__social-item {
     margin: 15px 0;
   }
 
-  .social-links {
+  .header__social-links {
     flex-direction: row;
     margin-top: 20px;
     gap: 15px;
   }
 
-  .burger {
+  .header__burger {
     font-size: 24px;
   }
 }

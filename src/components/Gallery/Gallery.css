@@ -1,17 +1,26 @@
-.gallery-section {
+/* Секция галереи */
+.gallery {
   padding: 20px;
   background-color: #000;
   color: #fff;
   text-align: center;
 }
 
-.gallery-grid {
+/* Заголовок галереи */
+.gallery__title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+/* Сетка галереи */
+.gallery__grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.gallery-item {
+/* Элемент галереи */
+.gallery__item {
   position: relative;
   width: calc(50% - 40px);
   margin: 20px;
@@ -20,28 +29,31 @@
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
+.gallery__item:hover {
   transform: scale(1.05);
 }
 
-.image-wrapper {
+/* Обертка изображения */
+.gallery__image-wrapper {
   width: 100%;
-  height: 400px; 
+  height: 400px;
   overflow: hidden;
 }
 
-.image-wrapper img {
+/* Изображение галереи */
+.gallery__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
+.gallery__item:hover .gallery__image {
   transform: scale(1.1);
 }
 
-.overlay {
+/* Наложение текста */
+.gallery__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -59,19 +71,29 @@
   transition: opacity 0.3s ease;
 }
 
-.gallery-item:hover .overlay {
+.gallery__item:hover .gallery__overlay {
   opacity: 1;
 }
 
+/* Ссылка на альбом */
+.gallery__link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+/* Адаптивность для устройств с шириной экрана до 768px */
 @media (max-width: 768px) {
-  .gallery-item {
+  .gallery__item {
     width: calc(100% - 40px);
   }
 }
 
+/* Адаптивность для устройств с шириной экрана до 669px */
 @media (max-width: 669px) {
-  .gallery-item {
-    width: calc(100% - 40px); 
-    margin: 10px; 
+  .gallery__item {
+    width: calc(100% - 40px);
+    margin: 10px;
   }
 }

@@ -1,3 +1,4 @@
+/* Основной контейнер страницы */
 .creativity-page {
   background-color: #000;
   color: #fff;
@@ -5,13 +6,20 @@
   padding: 20px;
 }
 
-.section-title {
+/* Секция страницы */
+.creativity-page__section {
+  margin-bottom: 40px;
+}
+
+/* Заголовок секции */
+.creativity-page__title {
   text-align: center;
   font-size: 36px;
   margin: 40px 0 20px;
 }
 
-.yandex-music-widget {
+/* Виджет Яндекс Музыки */
+.creativity-page__music-widget {
   margin: 20px auto;
   max-width: 1200px;
   background-color: #333;
@@ -19,14 +27,16 @@
   border-radius: 10px;
 }
 
-.youtube-video {
+/* Контейнер для видео */
+.creativity-page__video {
   margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.youtube-video iframe {
+/* Видеофреймы YouTube */
+.creativity-page__video iframe {
   width: 100%;
   max-width: 560px;
   height: 315px;
@@ -35,7 +45,8 @@
   margin: 10px;
 }
 
-.singles-section {
+/* Секция с синглами */
+.creativity-page__singles {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -43,26 +54,30 @@
   margin-top: 40px;
 }
 
-.single-card {
+/* Карточка сингла */
+.creativity-page__single-card {
   position: relative;
-  width: 300px; 
+  width: 300px;
   margin: 20px;
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-.single-card img {
+/* Изображение сингла */
+.creativity-page__single-image {
   width: 100%;
   height: auto;
   display: block;
 }
 
-.single-card:hover {
+/* Эффект увеличения карточки при наведении */
+.creativity-page__single-card:hover {
   transform: scale(1.05);
 }
 
-.single-title {
+/* Заголовок сингла */
+.creativity-page__single-title {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -78,6 +93,7 @@
   opacity: 0;
 }
 
-.single-card:hover .single-title {
+/* Отображение заголовка при наведении */
+.creativity-page__single-card:hover .creativity-page__single-title {
   opacity: 1;
 }

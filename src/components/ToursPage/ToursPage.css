@@ -1,3 +1,4 @@
+/* Основной контейнер страницы туров */
 .tours-page {
   background-color: #000;
   color: #fff;
@@ -5,6 +6,7 @@
   padding: 20px;
 }
 
+/* Заголовок секции */
 .section-title {
   text-align: center;
   font-size: 36px;

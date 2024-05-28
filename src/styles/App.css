@@ -1,25 +1,28 @@
+/* Основной контейнер приложения */
 .App {
   text-align: center;
 }
 
-main {
+/* Основной контент приложения */
+.App__main {
   margin: 0;
   padding: 0;
   width: 100%;
 }
 
-
-
+/* Шапка приложения */
 .App-header {
   background-color: #282c34;
   padding: 20px;
   color: white;
 }
 
+/* Установка box-sizing для всех элементов */
 * {
   box-sizing: border-box;
 }
 
+/* Установка стилей для html и body */
 html, body {
   margin: 0;
   padding: 0;

@@ -1,32 +1,78 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Carousel } from 'react-responsive-carousel';
-import { Link } from 'react-router-dom';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './MerchSection.css';
-import merchImage from '../../images/merch1.jpg';
+import React, { useState, useEffect, useRef } from "react";
+import { Carousel } from "react-responsive-carousel";
+import { Link, useLocation } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./MerchSection.css";
+import merchImage from "../../images/merch1.jpg";
 
+// Компонент MerchSection, представляющий секцию с мерчем
 const MerchSection = () => {
   const [selectedMerch, setSelectedMerch] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [showTitle, setShowTitle] = useState(true); // Состояние для отображения заголовка
   const timerRef = useRef(null); // Ref для хранения таймера
+  const location = useLocation(); // Получение текущего пути
 
+  // Данные о товарах
   const merchItems = [
-    { id: 1, title: 'Тут', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 2, title: 'Мог', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 3, title: 'Бы', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 4, title: 'Быть', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 5, title: 'Мерч', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 6, title: 'Но', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 7, title: 'Его', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
-    { id: 8, title: 'Нет:(', price: '1000 руб', description: 'А вообще очень ждем разные коллекции' },
+    {
+      id: 1,
+      title: "Тут",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 2,
+      title: "Мог",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 3,
+      title: "Бы",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 4,
+      title: "Быть",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 5,
+      title: "Мерч",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 6,
+      title: "Но",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 7,
+      title: "Его",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
+    {
+      id: 8,
+      title: "Нет:(",
+      price: "1000 руб",
+      description: "А вообще очень ждем разные коллекции",
+    },
   ];
 
+  // Функция для обработки клика по карточке товара
   const handleCardClick = (index) => {
     setSelectedMerch(merchItems[index]);
     clearInterval(timerRef.current); // Остановка таймера при открытии попапа
   };
 
+  // Функция для закрытия попапа
   const handleClosePopup = () => {
     setSelectedMerch(null);
     startTimer(); // Возобновление таймера при закрытии попапа
@@ -42,42 +88,57 @@ const MerchSection = () => {
     }, 8000);
   };
 
+  // Запуск таймера при монтировании компонента
   useEffect(() => {
-    startTimer(); // Запуск таймера при монтировании компонента
+    startTimer();
 
-    return () => clearInterval(timerRef.current); // Очистка таймера при размонтировании компонента
+    // Очистка таймера при размонтировании компонента
+    return () => clearInterval(timerRef.current);
   }, []);
 
+  // Обработчик закрытия попапа по нажатию клавиши Escape
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         handleClosePopup();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
+  // Обработчик изменения размера окна
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+  // Сброс таймера при изменении слайда, если попап не открыт
   useEffect(() => {
     if (!selectedMerch) {
-      startTimer(); // Сброс таймера при изменении слайда, если попап не открыт
+      startTimer();
     }
   }, [currentSlide, selectedMerch]);
 
+  // Скрытие заголовка "Наш мерч" при переходе на страницу туров
+  useEffect(() => {
+    if (location.pathname === "/tours") {
+      setShowTitle(false);
+    } else {
+      setShowTitle(true);
+    }
+  }, [location.pathname]);
+
+  // Получение свойств для карусели в зависимости от ширины окна
   const getCarouselProps = () => {
     if (windowWidth < 768) {
       return {
@@ -122,36 +183,66 @@ const MerchSection = () => {
   };
 
   return (
-    <div className="merch-section">
-      <h2>Наш мерч</h2>
+    <section className="merch-section">
+      {showTitle && <h2 className="merch-section__title">Наш мерч</h2>}
       <Carousel {...getCarouselProps()}>
         {merchItems.map((merch, index) => (
           <div
             key={merch.id}
-            className={`merch-card ${index === currentSlide ? 'center-card' : 'semi-transparent'}`}
+            className={`merch-section__card ${
+              index === currentSlide
+                ? "merch-section__card--center"
+                : "merch-section__card--semi-transparent"
+            }`}
             onClick={() => handleCardClick(index)}
           >
-            <img src={merchImage} alt={merch.title} />
-            <div className="merch-info">
-              <h3>{merch.title}</h3>
-              <p>{merch.price}</p>
-              <Link to={`/merch`} className="buy-button" onClick={(e) => e.stopPropagation()}>Купить</Link>
+            <img
+              src={merchImage}
+              alt={merch.title}
+              className="merch-section__image"
+            />
+            <div className="merch-section__info">
+              <h3 className="merch-section__title">{merch.title}</h3>
+              <p className="merch-section__price">{merch.price}</p>
+              <Link
+                to={`/merch`}
+                className="merch-section__buy-button"
+                onClick={(e) => e.stopPropagation()}
+              >
+                Купить
+              </Link>
             </div>
           </div>
         ))}
       </Carousel>
       {selectedMerch && (
-        <div className="merch-popup" onClick={handleClosePopup}>
-          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close-button" onClick={handleClosePopup}>&times;</span>
-            <img src={merchImage} alt={selectedMerch.title} />
-            <h3>{selectedMerch.title}</h3>
-            <p>{selectedMerch.description}</p>
-            <p>{selectedMerch.price}</p>
+        <div className="merch-section__popup" onClick={handleClosePopup}>
+          <div
+            className="merch-section__popup-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <span
+              className="merch-section__close-button"
+              onClick={handleClosePopup}
+            >
+              &times;
+            </span>
+            <img
+              src={merchImage}
+              alt={selectedMerch.title}
+              className="merch-section__popup-image"
+            />
+            <h3 className="merch-section__popup-title">
+              {selectedMerch.title}
+            </h3>
+            <p className="merch-section__popup-description">
+              {selectedMerch.description}
+            </p>
+            <p className="merch-section__popup-price">{selectedMerch.price}</p>
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

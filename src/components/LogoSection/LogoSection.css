@@ -1,3 +1,4 @@
+/* Основной контейнер секции с логотипом */
 .logo-section {
   position: relative;
   width: 100%;
@@ -10,7 +11,8 @@
   overflow: hidden;
 }
 
-.video-background {
+/* Фоновое видео */
+.logo-section__video-background {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,44 +22,47 @@
   overflow: hidden;
 }
 
-.video-background iframe {
+.logo-section__video-background iframe {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 100vw;
-  height: 56.25vw; 
+  height: 56.25vw;
   min-height: 100vh;
-  min-width: 177.78vh; 
+  min-width: 177.78vh;
   transform: translate(-50%, -50%);
   pointer-events: none;
   object-fit: cover;
 }
 
-.content {
+/* Контент, размещаемый поверх видео */
+.logo-section__content {
   position: relative;
   z-index: 1;
   text-align: center;
   padding: 20px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.02); 
+  background: rgba(0, 0, 0, 0.02);
   border-radius: 10px;
 }
 
-.content h1 {
+/* Заголовок */
+.logo-section__title {
   font-size: 72px;
   margin: 0;
   font-weight: bold;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.content p {
+/* Подзаголовок */
+.logo-section__subtitle {
   font-size: 24px;
   margin: 10px 0 0;
   font-weight: 300;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.content {
+.logo-section__content {
   margin-bottom: 10%;
 }

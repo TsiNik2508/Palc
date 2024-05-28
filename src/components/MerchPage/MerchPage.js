@@ -1,12 +1,13 @@
-import React from 'react';
-import MerchSection from '../MerchSection/MerchSection';
-import './MerchPage.css';
+import React from "react";
+import MerchSection from "../MerchSection/MerchSection";
+import "./MerchPage.css";
 
+// Компонент MerchPage, представляющий страницу с мерчем
 const MerchPage = () => {
   return (
-    <div className="merch-page">
+    <main className="merch-page">
       <MerchSection showTitle={false} />
-    </div>
+    </main>
   );
 };
 

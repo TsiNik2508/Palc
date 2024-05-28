@@ -1,3 +1,4 @@
+/* Основной контейнер секции туров */
 .tours-section {
   padding: 40px 20px;
   background-color: #000;
@@ -5,89 +6,105 @@
   text-align: center;
 }
 
-.tours-section h2 {
+/* Заголовок секции */
+.tours-section__header {
+  margin-bottom: 20px;
+}
+
+.tours-section__title {
   font-size: 32px;
   margin-bottom: 10px;
 }
 
-.tours-section p {
+.tours-section__subtitle {
   font-size: 16px;
-  margin-bottom: 20px;
 }
 
-.tours-table {
-  width: 100%; 
+/* Таблица туров */
+.tours-section__table {
+  width: 100%;
 }
 
-.tour-row {
+/* Ряд таблицы */
+.tours-section__row {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 20px 40px; 
+  padding: 20px 40px;
   border-bottom: 1px solid #333;
   transition: background 0.3s ease;
 }
 
-.tour-row:hover {
+.tours-section__row:hover {
   background: linear-gradient(to right, rgba(60, 240, 0, 0.3), rgba(60, 240, 0, 0));
 }
 
-.tour-date, .tour-venue, .tour-location, .tour-link {
+/* Колонки таблицы */
+.tours-section__date,
+.tours-section__venue,
+.tours-section__location,
+.tours-section__link {
   flex: 1;
   text-align: left;
 }
 
-.tour-link {
+.tours-section__link {
   text-align: right;
 }
 
-.tour-button {
+/* Кнопка */
+.tours-section__button {
   background-color: #fff;
   color: #000;
   padding: 10px 20px;
   border: none;
-  border-radius: 30px; 
+  border-radius: 30px;
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.tour-button:hover {
+.tours-section__button:hover {
   background-color: #3cf000;
   color: #fff;
 }
 
+/* Адаптивные стили */
 @media (max-width: 1024px) {
-  .tour-row {
+  .tours-section__row {
     flex-direction: column;
     align-items: center;
-    padding: 30px 20px; 
+    padding: 30px 20px;
   }
 
-  .tour-date, .tour-venue, .tour-location {
+  .tours-section__date,
+  .tours-section__venue,
+  .tours-section__location {
     text-align: center;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 
-  .tour-link {
+  .tours-section__link {
     text-align: center;
     margin-top: 10px;
   }
 }
 
 @media (max-width: 768px) {
-  .tour-row {
+  .tours-section__row {
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px; 
+    padding: 40px 20px;
   }
 
-  .tour-date, .tour-venue, .tour-location {
+  .tours-section__date,
+  .tours-section__venue,
+  .tours-section__location {
     text-align: center;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
   }
 
-  .tour-link {
+  .tours-section__link {
     text-align: center;
     margin-top: 15px;
   }

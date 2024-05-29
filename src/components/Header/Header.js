@@ -8,7 +8,7 @@ import {
   FaSpotify,
   FaBars,
   FaTimes,
-  FaShoppingCart,
+  FaOpencart,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Cart from "../Cart/Cart";
@@ -93,7 +93,7 @@ const Header = ({ cartItems, addItem, removeItem, decreaseItem }) => {
           <ul className="header__social-links">
             <li className="header__social-item header__cart">
               <button onClick={toggleCart} className="header__cart-button">
-                <FaShoppingCart size={24} />
+                <FaOpencart size={24} />
                 {totalItems > 0 && (
                   <span className="header__cart-count">{totalItems}</span>
                 )}
@@ -144,7 +144,7 @@ const Header = ({ cartItems, addItem, removeItem, decreaseItem }) => {
         </button>
         <div className="header__cart-mobile">
           <button onClick={toggleCart} className="header__cart-button">
-            <FaShoppingCart size={24} />
+            <FaOpencart size={24} />
             {totalItems > 0 && (
               <span className="header__cart-count">{totalItems}</span>
             )}

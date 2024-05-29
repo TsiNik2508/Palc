@@ -8,14 +8,20 @@ const Cart = ({ cartItems, addItem, removeItem, decreaseItem, closeCart }) => {
 
   // Подсчет общей стоимости товаров в корзине
   const totalPrice = cartItems
-    .reduce((acc, item) => acc + item.quantity * parseFloat(item.price.replace(' руб', '')), 0)
+    .reduce(
+      (acc, item) =>
+        acc + item.quantity * parseFloat(item.price.replace(" руб", "")),
+      0
+    )
     .toFixed(2);
 
   return (
     <div className="cart">
       <div className="cart__header">
         <h2 className="cart__title">Ваша корзина</h2>
-        <button className="cart__close" onClick={closeCart}>&times;</button>
+        <button className="cart__close" onClick={closeCart}>
+          &times;
+        </button>
       </div>
       {cartItems.length === 0 ? (
         <p className="cart__empty">Здесь пока пусто</p>
@@ -24,7 +30,11 @@ const Cart = ({ cartItems, addItem, removeItem, decreaseItem, closeCart }) => {
           <ul className="cart__items">
             {cartItems.map((item) => (
               <li key={item.id} className="cart__item">
-                <img src={item.image} alt={item.title} className="cart__item-image" />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="cart__item-image"
+                />
                 <div className="cart__item-info">
                   <h3 className="cart__item-title">{item.title}</h3>
                   <div className="cart__item-controls oval">
@@ -49,7 +59,12 @@ const Cart = ({ cartItems, addItem, removeItem, decreaseItem, closeCart }) => {
                 >
                   &#128465;
                 </button>
-                <p className="cart__item-price">{(item.quantity * parseFloat(item.price.replace(' руб', ''))).toFixed(2)} руб</p>
+                <p className="cart__item-price">
+                  {(
+                    item.quantity * parseFloat(item.price.replace(" руб", ""))
+                  ).toFixed(2)}{" "}
+                  руб
+                </p>
               </li>
             ))}
           </ul>

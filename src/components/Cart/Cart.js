@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 import "./Cart.css";
 
 // Компонент корзины
@@ -57,7 +58,7 @@ const Cart = ({ cartItems, addItem, removeItem, decreaseItem, closeCart }) => {
                   className="cart__item-remove"
                   onClick={() => removeItem(item.id)}
                 >
-                  &#128465;
+                  <FaTrash />
                 </button>
                 <p className="cart__item-price">
                   {(

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "../src/components/Header/Header.js";
 import Footer from "../src/components/Footer/Footer.js";
@@ -15,12 +15,61 @@ import ScrollToTop from "../src/utils/ScrollToTop.js";
 
 // Главный компонент приложения
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  // Функция для добавления товара в корзину
+  const addToCart = (item) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find(
+        (cartItem) => cartItem.id === item.id
+      );
+      if (existingItem) {
+        return prevItems.map((cartItem) =>
+          cartItem.id === item.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
+            : cartItem
+        );
+      } else {
+        return [...prevItems, { ...item, quantity: 1 }];
+      }
+    });
+  };
+
+  // Функция для увеличения количества товара в корзине
+  const addItem = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  // Функция для уменьшения количества товара в корзине
+  const decreaseItem = (id) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  // Функция для удаления товара из корзины
+  const removeItem = (id) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
   return (
     <Router basename="/Palc">
-      <ScrollToTop />{" "}
-      {/* Компонент для прокрутки страницы вверх при изменении маршрута */}
+      <ScrollToTop /> {/* Компонент для прокрутки страницы вверх при изменении маршрута */}
       <div className="App">
-        <Header /> {/* Шапка сайта */}
+        <Header
+          cartItems={cartItems}
+          addItem={addItem}
+          removeItem={removeItem}
+          decreaseItem={decreaseItem}
+        /> {/* Шапка сайта */}
         <main className="App__main">
           <Routes>
             {/* Главная страница */}
@@ -30,15 +79,15 @@ function App() {
                 <div>
                   <LogoSection />
                   <AlbumCardsSection />
-                  <MerchSection showTitle={true} />
+                  <MerchSection addToCart={addToCart} showTitle={true} />
                   <ToursSection />
                 </div>
               }
             />
             {/* Страницы сайта */}
             <Route path="/creativity" element={<CreativityPage />} />
-            <Route path="/tours" element={<ToursPage />} />
-            <Route path="/merch" element={<MerchPage />} />
+            <Route path="/tours" element={<ToursPage addToCart={addToCart} />} />
+            <Route path="/merch" element={<MerchPage addToCart={addToCart} />} />
             <Route path="/music" element={<MusicPage />} />
             <Route path="/gallery" element={<Gallery />} />
           </Routes>

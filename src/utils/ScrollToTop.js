@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 // Компонент ScrollToTop, автоматически прокручивающий страницу вверх при изменении маршрута
 const ScrollToTop = () => {

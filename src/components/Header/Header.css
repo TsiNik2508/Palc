@@ -58,7 +58,8 @@
 
 /* Ссылки навигации */
 .header__nav-link,
-.header__social-link {
+.header__social-link,
+.header__cart-link {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
@@ -66,7 +67,8 @@
 }
 
 .header__nav-link:hover,
-.header__social-link:hover {
+.header__social-link:hover,
+.header__cart-link:hover {
   transform: scale(1.1);
   color: #3cf000;
 }
@@ -85,15 +87,95 @@
   color: #fff;
 }
 
-/* Оверлей для затемнения фона при открытом меню */
+/* Кнопка для корзины */
+.header__cart-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.header__cart-button:hover {
+  transform: scale(1.1);
+  color: #3cf000;
+}
+
+.header__cart-count {
+  background-color: #134702;
+  color: #fff;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+/* Оверлей для затемнения фона при открытом меню или корзине */
 .header__overlay {
   position: fixed;
-  top: 60px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
+}
+
+/* Скрываем значок корзины для мобильных устройств */
+.header__cart-mobile {
+  display: none;
+}
+
+/* Навигация для корзины */
+.header__cart-navigation {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  background-color: #000;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 1001;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+}
+
+.header__cart-navigation--open {
+  display: flex;
+  transform: translateX(0);
+}
+
+/* Кнопка закрытия корзины */
+.header__cart-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  align-self: flex-end;
+  margin: 10px;
+  font-size: 24px;
+}
+
+/* Элементы корзины */
+.header__cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.header__cart-item {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  width: 100%;
+  text-align: left;
 }
 
 /* Адаптивность для устройств с шириной экрана до 1024px */
@@ -143,6 +225,11 @@
     display: block;
     z-index: 1002;
   }
+
+  .header__cart-mobile {
+    display: block;
+    margin-left: auto;
+  }
 }
 
 /* Адаптивность для устройств с шириной экрана до 768px */
@@ -165,5 +252,9 @@
 
   .header__burger {
     font-size: 24px;
+  }
+
+  .header__cart {
+    display: none;
   }
 }

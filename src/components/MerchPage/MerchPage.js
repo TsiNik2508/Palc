@@ -3,10 +3,10 @@ import MerchSection from "../MerchSection/MerchSection";
 import "./MerchPage.css";
 
 // Компонент MerchPage, представляющий страницу с мерчем
-const MerchPage = () => {
+const MerchPage = ({ addToCart }) => {
   return (
     <main className="merch-page">
-      <MerchSection showTitle={false} />
+      <MerchSection showTitle={false} addToCart={addToCart} />
     </main>
   );
 };

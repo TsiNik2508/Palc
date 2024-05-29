@@ -23,7 +23,8 @@
 }
 
 /* Установка стилей для html и body */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;

@@ -8,12 +8,15 @@ import {
   FaSpotify,
   FaBars,
   FaTimes,
+  FaShoppingCart,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Cart from "../Cart/Cart";
 
 // Компонент Header, представляющий верхнюю навигационную панель
-const Header = () => {
+const Header = ({ cartItems, addItem, removeItem, decreaseItem }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Функция для переключения состояния меню
   const toggleMenu = () => {
@@ -24,6 +27,19 @@ const Header = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Функция для переключения состояния корзины
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  // Функция для закрытия корзины
+  const closeCart = () => {
+    setIsCartOpen(false);
+  };
+
+  // Подсчет общего количества товаров в корзине
+  const totalItems = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <header className="header">
@@ -75,6 +91,14 @@ const Header = () => {
             </li>
           </ul>
           <ul className="header__social-links">
+            <li className="header__social-item header__cart">
+              <button onClick={toggleCart} className="header__cart-button">
+                <FaShoppingCart size={24} />
+                {totalItems > 0 && (
+                  <span className="header__cart-count">{totalItems}</span>
+                )}
+              </button>
+            </li>
             <li className="header__social-item">
               <a href="https://vk.com/palcband" className="header__social-link">
                 <FaVk size={24} />
@@ -118,8 +142,30 @@ const Header = () => {
         >
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </button>
+        <div className="header__cart-mobile">
+          <button onClick={toggleCart} className="header__cart-button">
+            <FaShoppingCart size={24} />
+            {totalItems > 0 && (
+              <span className="header__cart-count">{totalItems}</span>
+            )}
+          </button>
+        </div>
       </div>
       {isMenuOpen && <div className="header__overlay" onClick={toggleMenu} />}
+      <div
+        className={`header__cart-navigation ${
+          isCartOpen ? "header__cart-navigation--open" : ""
+        }`}
+      >
+        <Cart
+          cartItems={cartItems}
+          addItem={addItem}
+          removeItem={removeItem}
+          decreaseItem={decreaseItem}
+          closeCart={closeCart}
+        />
+      </div>
+      {isCartOpen && <div className="header__overlay" onClick={closeCart} />}
     </header>
   );
 };

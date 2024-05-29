@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Carousel } from "react-responsive-carousel";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./MerchSection.css";
 import merchImage from "../../images/merch1.jpg";
 
 // Компонент MerchSection, представляющий секцию с мерчем
-const MerchSection = () => {
+const MerchSection = ({ addToCart }) => {
   const [selectedMerch, setSelectedMerch] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -21,50 +21,59 @@ const MerchSection = () => {
       title: "Тут",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 2,
       title: "Мог",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 3,
       title: "Бы",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 4,
       title: "Быть",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 5,
       title: "Мерч",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 6,
       title: "Но",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 7,
       title: "Его",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
+      image: merchImage
     },
     {
       id: 8,
       title: "Нет:(",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-    },
+      image: merchImage
+    }
   ];
+  
 
   // Функция для обработки клика по карточке товара
   const handleCardClick = (index) => {
@@ -204,13 +213,15 @@ const MerchSection = () => {
             <div className="merch-section__info">
               <h3 className="merch-section__title">{merch.title}</h3>
               <p className="merch-section__price">{merch.price}</p>
-              <Link
-                to={`/merch`}
+              <button
                 className="merch-section__buy-button"
-                onClick={(e) => e.stopPropagation()}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  addToCart(merch);
+                }}
               >
-                Купить
-              </Link>
+                Добавить в корзину
+              </button>
             </div>
           </div>
         ))}

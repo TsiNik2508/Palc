@@ -7,9 +7,9 @@ import merchImage from "../../images/merch1.jpg";
 
 // Компонент MerchSection, представляющий секцию с мерчем
 const MerchSection = ({ addToCart }) => {
-  const [selectedMerch, setSelectedMerch] = useState(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [selectedMerch, setSelectedMerch] = useState(null); // Состояние для выбранного мерча
+  const [currentSlide, setCurrentSlide] = useState(0); // Состояние для текущего слайда
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth); // Состояние для ширины окна
   const [showTitle, setShowTitle] = useState(true); // Состояние для отображения заголовка
   const timerRef = useRef(null); // Ref для хранения таймера
   const location = useLocation(); // Получение текущего пути
@@ -21,64 +21,67 @@ const MerchSection = ({ addToCart }) => {
       title: "Тут",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 2,
       title: "Мог",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 3,
       title: "Бы",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 4,
       title: "Быть",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 5,
       title: "Мерч",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 6,
       title: "Но",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 7,
       title: "Его",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
+      image: merchImage,
     },
     {
       id: 8,
       title: "Нет:(",
       price: "1000 руб",
       description: "А вообще очень ждем разные коллекции",
-      image: merchImage
-    }
+      image: merchImage,
+    },
   ];
-  
 
   // Функция для обработки клика по карточке товара
   const handleCardClick = (index) => {
-    setSelectedMerch(merchItems[index]);
-    clearInterval(timerRef.current); // Остановка таймера при открытии попапа
+    if (index === currentSlide) {
+      setSelectedMerch(merchItems[index]);
+      clearInterval(timerRef.current); // Остановка таймера при открытии попапа
+    } else {
+      setCurrentSlide(index); // Переключение на выбранный слайд
+    }
   };
 
   // Функция для закрытия попапа
@@ -159,7 +162,7 @@ const MerchSection = ({ addToCart }) => {
         swipeable: true,
         emulateTouch: true,
         onChange: (index) => setCurrentSlide(index),
-        showArrows: true,
+        showArrows: false, // Скрыть стрелки
       };
     }
 
@@ -174,7 +177,7 @@ const MerchSection = ({ addToCart }) => {
         swipeable: true,
         emulateTouch: true,
         onChange: (index) => setCurrentSlide(index),
-        showArrows: true,
+        showArrows: false, // Скрыть стрелки
       };
     }
 
@@ -188,6 +191,7 @@ const MerchSection = ({ addToCart }) => {
       swipeable: true,
       emulateTouch: true,
       onChange: (index) => setCurrentSlide(index),
+      showArrows: false, // Скрыть стрелки
     };
   };
 
@@ -206,7 +210,7 @@ const MerchSection = ({ addToCart }) => {
             onClick={() => handleCardClick(index)}
           >
             <img
-              src={merchImage}
+              src={merch.image}
               alt={merch.title}
               className="merch-section__image"
             />
@@ -239,7 +243,7 @@ const MerchSection = ({ addToCart }) => {
               &times;
             </span>
             <img
-              src={merchImage}
+              src={selectedMerch.image}
               alt={selectedMerch.title}
               className="merch-section__popup-image"
             />

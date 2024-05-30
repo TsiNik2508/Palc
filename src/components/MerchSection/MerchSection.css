@@ -31,6 +31,7 @@
 
 .merch-section__card--semi-transparent {
   opacity: 0.5;
+  cursor: default;
 }
 
 .merch-section__card:hover {
@@ -110,7 +111,7 @@
 }
 
 /* Адаптивные стили */
-@media (max-width: 1085px) {
+@media (max-width: 981px) {
   .merch-section__card {
     width: 70%;
   }
@@ -128,6 +129,11 @@
   .carousel .slide {
     width: 90% !important;
     margin: 0 auto;
+  }
+
+  .merch-section__info h3,
+  .merch-section__info p {
+    font-size: 22px;
   }
 }
 
@@ -163,24 +169,5 @@
 }
 
 .carousel.carousel-slider .control-arrow {
-  top: 50%;
-  transform: translateY(-50%);
-  color: #fff;
-  font-size: 30px;
-  background: linear-gradient(135deg, #00ff00, #009900);
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 255, 0, 0.7);
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel.carousel-slider .control-arrow:hover {
-  background: linear-gradient(135deg, #009900, #00ff00);
-  transform: scale(1.2);
+  display: none;
 }

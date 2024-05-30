@@ -91,14 +91,16 @@ const Header = ({ cartItems, addItem, removeItem, decreaseItem }) => {
             </li>
           </ul>
           <ul className="header__social-links">
-            <li className="header__social-item header__cart">
-              <button onClick={toggleCart} className="header__cart-button">
-                <FaOpencart size={24} />
-                {totalItems > 0 && (
-                  <span className="header__cart-count">{totalItems}</span>
-                )}
-              </button>
-            </li>
+            {!isMenuOpen && (
+              <li className="header__social-item header__cart">
+                <button onClick={toggleCart} className="header__cart-button">
+                  <FaOpencart size={24} />
+                  {totalItems > 0 && (
+                    <span className="header__cart-count">{totalItems}</span>
+                  )}
+                </button>
+              </li>
+            )}
             <li className="header__social-item">
               <a href="https://vk.com/palcband" className="header__social-link">
                 <FaVk size={24} />

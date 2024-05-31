@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Palc/static/css/main.2a7413e7.css",
-    "main.js": "/Palc/static/js/main.12363a3f.js",
+    "main.js": "/Palc/static/js/main.8731cfa0.js",
     "static/js/453.d0090c89.chunk.js": "/Palc/static/js/453.d0090c89.chunk.js",
     "static/media/BeastHead.otf": "/Palc/static/media/BeastHead.5790c23583c7290d6530.otf",
     "static/media/palcAlbum1.jpg": "/Palc/static/media/palcAlbum1.cb94f0692fc118663322.jpg",
@@ -15,6 +15,7 @@
     "static/media/palcAlbum5.jpg": "/Palc/static/media/palcAlbum5.4942c2296ad7da4fec17.jpg",
     "static/media/palcAlbum13.jpg": "/Palc/static/media/palcAlbum13.689164aa38cf73a13cc4.jpg",
     "static/media/palcAlbum10.jpg": "/Palc/static/media/palcAlbum10.760be3f2ed19f58b9538.jpg",
+    "static/media/topor.jpg": "/Palc/static/media/topor.6c435059cab52d310d15.jpg",
     "static/media/strashno.png": "/Palc/static/media/strashno.3dccb5d404c3b69dcf0d.png",
     "static/media/palcAlbum9.jpg": "/Palc/static/media/palcAlbum9.efdea7f970bc1e981d9f.jpg",
     "static/media/palcAlbum2.jpg": "/Palc/static/media/palcAlbum2.53c854edc49186f1e545.jpg",
@@ -32,11 +33,11 @@
     "static/media/tam.jpg": "/Palc/static/media/tam.47ac27c216d4950dd972.jpg",
     "index.html": "/Palc/index.html",
     "main.2a7413e7.css.map": "/Palc/static/css/main.2a7413e7.css.map",
-    "main.12363a3f.js.map": "/Palc/static/js/main.12363a3f.js.map",
+    "main.8731cfa0.js.map": "/Palc/static/js/main.8731cfa0.js.map",
     "453.d0090c89.chunk.js.map": "/Palc/static/js/453.d0090c89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2a7413e7.css",
-    "static/js/main.12363a3f.js"
+    "static/js/main.8731cfa0.js"
   ]
 }

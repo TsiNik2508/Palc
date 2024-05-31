@@ -7,9 +7,15 @@ import tam from "../../images/tam.jpg";
 import MiNePo from "../../images/MiNePo.jpg";
 import VoDvore from "../../images/VoDvore.jpg";
 import TurnIt from "../../images/TurnIt.jpg";
+import Topor from "../../images/topor.jpg"
 
 // Массив с данными о синглах
 const singles = [
+  {
+    title: "Топоры",
+    url: "https://music.yandex.ru/album/31311788",
+    img: Topor,
+  },
   {
     title: "Страшно",
     url: "https://music.yandex.ru/album/30641801",

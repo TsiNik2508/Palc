@@ -111,15 +111,15 @@
 }
 
 /* Адаптивные стили */
-@media (max-width: 981px) {
+/* @media (max-width: 981px) {
   .merch-section__card {
-    width: 70%;
+    width: 60%;
   }
 
   .carousel .slide {
-    margin: 0 5px;
+    margin: 0 ;
   }
-}
+} */
 
 @media (max-width: 768px) {
   .merch-section__card {

@@ -10,7 +10,6 @@ import album4 from "../../images/album4.jpg";
 const AlbumCardsSection = () => {
   return (
     <section className="album-cards">
-      <h2 className="album-cards__title">Наши альбомы</h2>
       <ul className="album-cards__list">
         <li className="album-cards__item">
           <Link to="/creativity" className="album-cards__link">
